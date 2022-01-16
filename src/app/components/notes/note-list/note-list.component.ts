@@ -1,3 +1,4 @@
+import { NoteService } from 'src/app/services/note.service';
 import { INote } from './../../../interfaces/notes/INote';
 import { Component, Input } from "@angular/core";
 
@@ -8,6 +9,10 @@ import { Component, Input } from "@angular/core";
 })
 export class NoteListComponent {
 
-    @Input() notes: INote[] = [];
-    constructor() {}
+    
+    constructor(private noteService: NoteService) {}
+
+    get notes(): INote[] {
+        return this.noteService.notes;
+    }
 }

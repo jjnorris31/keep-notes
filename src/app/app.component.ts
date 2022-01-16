@@ -1,3 +1,4 @@
+import { NoteService } from 'src/app/services/note.service';
 import { INote } from './interfaces/notes/INote';
 import { Component } from '@angular/core';
 
@@ -9,14 +10,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   title = 'bases';
+  
 
-  public notes: INote[] = [
-    {title: "Nota 1", text: "Esta es la nota 1"},
-    {title: "Nota 2", text: "Esta es la nota 2"},
-    {title: "Nota 3", text: "Esta es la nota 3"},
-  ];
+  constructor(
+    private noteService: NoteService
+  ) {}
 
-  public addNewNote(newNote: INote) {
-    console.log(newNote);
+  get notes(): INote[] {
+    return this.noteService.notes;
   }
+
+  addNewNote(note: INote) {
+    this.noteService.addNewNote(note);
+  }
+
 }
