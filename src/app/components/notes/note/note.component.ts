@@ -1,3 +1,4 @@
+import { Input } from '@angular/core';
 import {Component} from '@angular/core';
 
 @Component({
@@ -6,12 +7,11 @@ import {Component} from '@angular/core';
     selector: "note"
 })
 export class NoteComponent {
-    public title: string;
-    public text: string;
-
+    @Input() title: string = "";
+    @Input() text: string = "";
+    
     constructor() {
-        this.title = "Example note";
-        this.text = "This is a note!"
+
     }
 
 }

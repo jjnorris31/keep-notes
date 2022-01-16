@@ -1,7 +1,7 @@
 <div>
     <ul>
         <li *ngFor="let note of notes">
-            <note></note>
+            <note [title]="note.title" [text]="note.text"></note>
         </li>
     </ul>
 </div>

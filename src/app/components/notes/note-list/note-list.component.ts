@@ -1,9 +1,5 @@
-import { Component } from "@angular/core";
-
-interface Note {
-    title: string;
-    text: string;
-}
+import { INote } from './../../../interfaces/notes/INote';
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: "note-list",
@@ -11,10 +7,7 @@ interface Note {
     styleUrls: ["./note-list.component.css"]
 })
 export class NoteListComponent {
-    public notes: Note[] = [
-        {title: "Nota 1", text: "Esta es la nota 1"},
-        {title: "Nota 2", text: "Esta es la nota 2"},
-        {title: "Nota 3", text: "Esta es la nota 3"},
-    ]
+
+    @Input() notes: INote[] = [];
     constructor() {}
 }
