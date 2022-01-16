@@ -38,8 +38,16 @@ export class NoteFormComponent implements OnInit {
     }
 
     this.notes.push(this.newNote);
+    this.resetNewNote();
     
     return true;
+  }
+
+  resetNewNote() {
+    this.newNote = {
+      text: "",
+      title: ""
+    }
   }
 
 }
