@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NoteFormComponent implements OnInit {
 
-  @Output() onNewNote: EventEmitter<INote> = new EventEmitter();
+  @Output() onNewNote = new EventEmitter<INote>();
   
 
   public newNote: INote = {
@@ -33,7 +33,6 @@ export class NoteFormComponent implements OnInit {
       console.log("El título es requerido");
       return false;
     }
-
     this.onNewNote.emit(this.newNote);
     this.resetNewNote();
     

@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'bases';
+
   public notes: INote[] = [
     {title: "Nota 1", text: "Esta es la nota 1"},
     {title: "Nota 2", text: "Esta es la nota 2"},
