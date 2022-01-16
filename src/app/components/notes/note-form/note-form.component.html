@@ -1,0 +1,8 @@
+<form (ngSubmit)="addNote()">
+    <input type="text" name="title" [(ngModel)]="newNote.title"/>
+    <textarea name="textarea" rows="10" [(ngModel)]="newNote.text"></textarea>
+    <button type="submit">Save note</button>
+</form>
+
+<div>{{newNote.title}}</div>
+<div>{{newNote.text}}</div>
