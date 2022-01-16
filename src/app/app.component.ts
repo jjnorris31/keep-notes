@@ -1,3 +1,4 @@
+import { INote } from './interfaces/notes/INote';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bases';
+
+  public addNewNote(newNote: INote) {
+    console.log(newNote);
+  }
 }

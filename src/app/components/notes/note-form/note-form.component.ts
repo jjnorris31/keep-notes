@@ -1,5 +1,5 @@
 import { INote } from './../../../interfaces/notes/INote';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-note-form',
@@ -8,11 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteFormComponent implements OnInit {
 
-  public notes: INote[] = [
-    {title: "Nota 1", text: "Esta es la nota 1"},
-    {title: "Nota 2", text: "Esta es la nota 2"},
-    {title: "Nota 3", text: "Esta es la nota 3"},
-  ]
+  @Output() onNewNote: EventEmitter<INote> = new EventEmitter();
+  
 
   public newNote: INote = {
     text: "",
@@ -37,7 +34,7 @@ export class NoteFormComponent implements OnInit {
       return false;
     }
 
-    this.notes.push(this.newNote);
+    this.onNewNote.emit(this.newNote);
     this.resetNewNote();
     
     return true;
