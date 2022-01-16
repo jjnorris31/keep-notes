@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class NoteFormComponent implements OnInit {
 
   public newNote: INote = {
-    text: "Awesome text",
-    title: "Awesome note"
+    text: "",
+    title: ""
   }
 
 
@@ -20,7 +20,15 @@ export class NoteFormComponent implements OnInit {
   }
 
   public addNote(): boolean {
-    console.log("This is a test");
+
+    if (this.newNote.text === "") {
+      console.log("El texto es requerido");
+    }
+
+    if (this.newNote.title === "") {
+      console.log("El título es requerido");
+    } 
+    
     return true;
   }
 
