@@ -8,5 +8,6 @@ form {
 input, textarea {
     margin-bottom: 1rem;
     width: 100%;
+    font-weight: normal;
 }
 
